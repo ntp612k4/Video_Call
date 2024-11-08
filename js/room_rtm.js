@@ -6,7 +6,7 @@ let handleMemberJoined = async (MemberId) => {
     updateMemberTotal(members)
 
     let {name} = await rtmClient.getUserAttributesByKeys(MemberId, ['name'])
-    addBotMessageToDom(`Welcome to the room ${name}! 👋`)
+    addBotMessageToDom(`Xin chào ${name}! 👋`)
 }
 
 let addMemberToDom = async (MemberId) => {
@@ -36,7 +36,7 @@ let handleMemberLeft = async (MemberId) => {
 let removeMemberFromDom = async (MemberId) => {
     let memberWrapper = document.getElementById(`member__${MemberId}__wrapper`)
     let name = memberWrapper.getElementsByClassName('member_name')[0].textContent
-    addBotMessageToDom(`${name} has left the room.`)
+    addBotMessageToDom(`${name} đã rời khỏi phòng.`)
         
     memberWrapper.remove()
 }
@@ -104,7 +104,7 @@ let addBotMessageToDom = (botMessage) => {
 
     let newMessage = `<div class="message__wrapper">
                         <div class="message__body__bot">
-                            <strong class="message__author__bot">🤖 Mumble Bot</strong>
+                            <strong class="message__author__bot">Chat </strong>
                             <p class="message__text__bot">${botMessage}</p>
                         </div>
                     </div>`

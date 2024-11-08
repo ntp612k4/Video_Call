@@ -165,6 +165,7 @@
 }
 
 #stream__container {
+  background-color: #eadfdf;
   justify-self: center;
   width: calc(100% - 40.7rem);
   position: fixed;
@@ -208,11 +209,11 @@
   justify-content: center;
   align-items: center;
   border:2px solid #b366f9;
-  border-radius: 50%;
+  border-radius: 10%;
   cursor: pointer;
   overflow: hidden;
-  height: 300px;
-  width: 300px;
+  height: 170px;
+  width: 230px;
 
   background-image: url("/images/logo.png");
   background-repeat: no-repeat;
@@ -226,7 +227,7 @@
 }
 
 .video-player video{
-  border-radius: 50%;
+  border-radius: 10;
 }
 
 @media (max-width: 1400px) {
@@ -339,7 +340,7 @@
 }
 
 #join-btn{
-  background-color: #845695;
+  background-color: #00C5A7;
   font-size: 18px;
   padding: 25px 50px;
   border: none;
@@ -352,3 +353,33 @@
   transform: translateX(-50%);
   cursor: pointer;
 }
+
+/* 
+#nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #000000;
+  background-color: white;
+  text-decoration: none;
+  padding: 16px 5%;
+  z-index: 999;
+}
+
+.nav--list {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#members__button,
+#chat__button {
+  display: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+} */
