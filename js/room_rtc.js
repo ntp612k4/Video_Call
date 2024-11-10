@@ -36,7 +36,7 @@ let joinRoomInit = async () => {
   await rtmClient.login({ uid, token });
 
   await rtmClient.addOrUpdateLocalUserAttributes({ name: displayName });
-
+  
   channel = await rtmClient.createChannel(roomId);
   await channel.join();
 
@@ -47,7 +47,8 @@ let joinRoomInit = async () => {
   getMembers();
   addBotMessageToDom(`Xin chào bạn ${displayName}! 👋`);
 
-  client = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
+  client = 
+  ({ mode: "rtc", codec: "vp8" });
   await client.join(APP_ID, roomId, token, uid);
 
   client.on("user-published", handleUserPublished);
