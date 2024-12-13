@@ -22,7 +22,11 @@ if (!roomId) {
 
 let displayName = sessionStorage.getItem("display_name");
 if (!displayName) {
+<<<<<<< HEAD
   window.location = "index.html";
+=======
+  window.location = "lobby.html";
+>>>>>>> 8f907bf3648378b7085e72e00d2d77ef96a66e87
 }
 
 let localTracks = [];
@@ -36,6 +40,7 @@ let joinRoomInit = async () => {
   await rtmClient.login({ uid, token });
 
   await rtmClient.addOrUpdateLocalUserAttributes({ name: displayName });
+<<<<<<< HEAD
 
   channel = await rtmClient.createChannel(roomId);
   await channel.join();
@@ -50,6 +55,23 @@ let joinRoomInit = async () => {
   client = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
   await client.join(APP_ID, roomId, token, uid);
 
+=======
+  
+  channel = await rtmClient.createChannel(roomId);
+  await channel.join();
+
+  channel.on("MemberJoined", handleMemberJoined);
+  channel.on("MemberLeft", handleMemberLeft);
+  channel.on("ChannelMessage", handleChannelMessage);
+
+  getMembers();
+  addBotMessageToDom(`Xin chào bạn ${displayName}! 👋`);
+
+  client = 
+  ({ mode: "rtc", codec: "vp8" });
+  await client.join(APP_ID, roomId, token, uid);
+
+>>>>>>> 8f907bf3648378b7085e72e00d2d77ef96a66e87
   client.on("user-published", handleUserPublished);
   client.on("user-left", handleUserLeft);
 };
@@ -261,6 +283,10 @@ document.getElementById("camera-btn").addEventListener("click", toggleCamera);
 document.getElementById("mic-btn").addEventListener("click", toggleMic);
 document.getElementById("screen-btn").addEventListener("click", toggleScreen);
 document.getElementById("join-btn").addEventListener("click", joinStream);
+<<<<<<< HEAD
 // document.getElementById("leave-btn").addEventListener("click", leaveStream);
+=======
+document.getElementById("leave-btn").addEventListener("click", leaveStream);
+>>>>>>> 8f907bf3648378b7085e72e00d2d77ef96a66e87
 
 joinRoomInit();

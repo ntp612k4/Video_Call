@@ -6,7 +6,11 @@ let handleMemberJoined = async (MemberId) => {
     updateMemberTotal(members)
 
     let {name} = await rtmClient.getUserAttributesByKeys(MemberId, ['name'])
+<<<<<<< HEAD
     addBotMessageToDom(`Xin chào ${name} đã tham gia phòng.`)
+=======
+    addBotMessageToDom(`Xin chào ${name}! 👋`)
+>>>>>>> 8f907bf3648378b7085e72e00d2d77ef96a66e87
 }
 
 let addMemberToDom = async (MemberId) => {
@@ -104,7 +108,11 @@ let addBotMessageToDom = (botMessage) => {
 
     let newMessage = `<div class="message__wrapper">
                         <div class="message__body__bot">
+<<<<<<< HEAD
                             <strong class="message__author__bot">🤖 Chat Bot</strong>
+=======
+                            <strong class="message__author__bot">Chat </strong>
+>>>>>>> 8f907bf3648378b7085e72e00d2d77ef96a66e87
                             <p class="message__text__bot">${botMessage}</p>
                         </div>
                     </div>`
